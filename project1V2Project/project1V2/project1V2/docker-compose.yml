@@ -1,0 +1,43 @@
+version: "3.8"   # match to docker engine version
+
+services:
+  project1v2:
+      build: .
+      ports:
+       - 8081:8080
+      environment:
+        - url=jdbc:postgresql://postgres:5432/postgres
+        - username=postgres
+        - password=pass
+      container_name: application-container
+      depends_on:
+        - postgres
+        # deploy:
+        #   replicas: 2
+        
+  logging:
+      build: .
+      ports:
+       - 8082:8080
+      environment:
+        - url=jdbc:postgresql://postgres:5432/postgres
+        - username=postgres
+        - password=pass
+      container_name: Logging-container
+      volumes:
+       - ./logs/application.log:/logs/application.log
+      
+
+  postgres:
+    image: postgres
+    ports:
+       - 5432:5432
+    environment:
+       - POSTGRES_PASSWORD=pass
+    container_name: database-container
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
+    driver: local
