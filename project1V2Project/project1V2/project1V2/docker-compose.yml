@@ -9,35 +9,70 @@ services:
         - url=jdbc:postgresql://postgres:5432/postgres
         - username=postgres
         - password=pass
-      container_name: application-container
+      container_name: project1v2-container
       depends_on:
         - postgres
-        # deploy:
-        #   replicas: 2
-        
-  logging:
-      build: .
-      ports:
-       - 8082:8080
-      environment:
-        - url=jdbc:postgresql://postgres:5432/postgres
-        - username=postgres
-        - password=pass
-      container_name: Logging-container
       volumes:
        - ./logs/application.log:/logs/application.log
+        
+#  logging:
+#      build: .
+#      ports:
+#       - 8082:8080
+#      environment:
+#        - url=jdbc:postgresql://postgres:5432/postgres
+#        - username=postgres
+#        - password=pass
+#      container_name: project1v2
+#      volumes:
+#       - ./logs/application.log:/logs/application.log
+       
+  promtail:
+   image: grafana/promtail:latest
+   container_name: promtail-container
+   volumes:
+    - ./loki-stack/promtail/promtail-docker-config.yml:/etc/promtail/docker-config.yaml
+    - ..logs/application.log:/var/log/application.log
+   command: "--config.file=/etc/promtail/docker-config.yaml"  
+  loki:
+    image: grafana/loki:latest
+    container_name: loki-container
+    ports:
+     - 3100:3100
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana-container
+    volumes:
+      - grafana-data:/var/lib/grafana
+    # persisting grafana settings
+    ports:
+      - 3000:3000
+    depends_on:
+      - loki
       
-
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - 9090:9090
+    volumes:
+      - ./loki-stack/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    container_name: prometheus-container
+    
   postgres:
     image: postgres
     ports:
        - 5432:5432
     environment:
        - POSTGRES_PASSWORD=pass
-    container_name: database-container
+    container_name: postgres-container
     volumes:
       - db-data:/var/lib/postgresql/data
 
 volumes:
   db-data:
+    driver: local
+  grafana-data:
+    driver: local
+  prometheus-data:
     driver: local
