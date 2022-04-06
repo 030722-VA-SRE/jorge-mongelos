@@ -1,12 +1,13 @@
 package com.revature.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.revature.DTOs.UsersDTO;
+import com.revature.exceptions.AuthenticationException;
 import com.revature.models.Users;
 import com.revature.persistence.UsersRepository;
 
@@ -22,18 +23,18 @@ public class AuthServices {
 		this.ur = ur;
 	}
 	
-	public UsersDTO login(String userName, String password) {
+	public String login(String userName, String password) {
 		
 		Users principal = ur.findUserByUserName(userName);
 		
 		if(principal == null || !password.equals(principal.getUserPassword())) {
 			
-			return null;
+			throw new AuthenticationException("Attepmted to login with username: " + userName);
 			
 		}//End if
 		
 		log.info(MDC.get("userToken"));
-		return new UsersDTO(principal);
+		return principal.getUserId() + ":" + principal.getRole().toString();
 		
 	}//End login()
 	

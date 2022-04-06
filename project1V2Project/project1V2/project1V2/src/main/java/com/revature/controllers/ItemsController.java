@@ -1,9 +1,10 @@
 package com.revature.controllers;
 
+import java.util.List;
+
 import org.jboss.logging.MDC;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,57 +14,46 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.revature.DTOs.ItemsDTO;
-import com.revature.DTOs.UsersDTO;
+
+import com.revature.exceptions.ItemsNotFoundException;
 import com.revature.models.Items;
-import com.revature.models.Users;
 import com.revature.services.ItemsServices;
 
 @RestController
 @RequestMapping("/items")
 public class ItemsController {
 	
-	private ItemsServices ir;
+	private ItemsServices is;
 	private static Logger log =LoggerFactory.getLogger(ItemsController.class);
 	
 	@Autowired
-	public ItemsController(ItemsServices ir) {
+	public ItemsController(ItemsServices is) {
 		super();
-		this.ir = ir;
+		this.is = is;
 	}
 	
 	@GetMapping
 	public ResponseEntity<List<Items>> getAll(){
 		
 		log.info((String) MDC.get("userToken"));
-		return new ResponseEntity<>(ir.getAll(), HttpStatus.OK);
+		return new ResponseEntity<>(is.getAll(), HttpStatus.OK);
 		
 	}//End getAll()
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<ItemsDTO> getById(@PathVariable("id") int id){
+	public ResponseEntity<Items> getById(@PathVariable("id")int id) throws ItemsNotFoundException{
 		
-		if(id == -1) {
-			
-			return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-			
-		}//End if
-		
-		ItemsDTO u = ir.getItemsById(id);
-		
-		log.info((String) MDC.get("userToken"));
-		return new ResponseEntity<>(u, HttpStatus.OK);
+		return new ResponseEntity<>(is.getItemsById(id), HttpStatus.OK);
 		
 	}//End getById()
 	
 	@PostMapping
-	public ResponseEntity<String> createUser(@RequestBody Items item){
+	public ResponseEntity<String> createItem(@RequestBody Items item){
 		
-		Items i = ir.createItems(item);
-		return new ResponseEntity<>("User " + i.getItemName() + " has been created", HttpStatus.CREATED);
+		Items i = is.createItems(item);
+		return new ResponseEntity<>("Item " + i.getItemName() + " has been created", HttpStatus.CREATED);
 		
 	}//End createUser()
 	
@@ -71,14 +61,14 @@ public class ItemsController {
 	public ResponseEntity<Items> updateItems(@RequestBody Items item, @PathVariable("id") int id){
 		
 		log.warn("[insert user info here] tried to access endpoint /users/id");
-		return new ResponseEntity<>(ir.updateItems(id,  item), HttpStatus.CREATED);
+		return new ResponseEntity<>(is.updateItems(id,  item), HttpStatus.CREATED);
 		
 	}//End updateUser()
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> DeleteById(@PathVariable("id") int id){
 		
-		ir.deleteItems(id);
+		is.deleteItems(id);
 		return new ResponseEntity<>("Item was deleted", HttpStatus.OK);
 		
 	}//End DeleteById

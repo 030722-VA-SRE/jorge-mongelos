@@ -53,6 +53,8 @@ public class UsersServices {
 	@Transactional
 	public Users updateUser(int id, Users user) {
 		
+		Users u = ur.findById(id).orElseThrow(UserNotFoundException::new);
+		user.setUserId(u.getUserId());
 		return ur.save(user);
 		
 	}//End updateUser() 

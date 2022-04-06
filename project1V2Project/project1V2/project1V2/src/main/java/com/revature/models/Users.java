@@ -4,6 +4,8 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +22,17 @@ public class Users {
 	private String userName;
 	@Column(name = "userPassword", length=20, nullable = false)
 	private String userPassword;
+	@Column
+	@Enumerated(EnumType.STRING)
+	private UsersRole role;
 	
+	
+	public UsersRole getRole() {
+		return role;
+	}
+	public void setRole(UsersRole role) {
+		this.role = role;
+	}
 	public int getUserId() {
 		return userId;
 	}
