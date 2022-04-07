@@ -1,5 +1,9 @@
 package com.revature.controllers;
 
+
+
+import java.util.UUID;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -12,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.DTOs.UsersDTO;
 import com.revature.services.AuthServices;
 
 @RestController
@@ -28,23 +31,21 @@ public class AuthController {
 		this.as = as;
 	}
 	@PostMapping
-	public ResponseEntity<UsersDTO> login(@RequestParam("username")String userName, @RequestParam("password")String password){
-	
-		UsersDTO principal = as.login(userName, password);
+	public ResponseEntity<String> login(@RequestParam(name="username")String userName, @RequestParam(name="password")String password){
 		
-		if(principal == null) {
-			
-			return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-			
-		}//End if
-		
-		String token = as.generateToken(principal);
+		MDC.put("requestId",UUID.randomUUID().toString());
+		log.debug("starting login");
+
+		String token = as.login(userName, password);
+		// String verifiedToken = as.verify(token);
 		
 		HttpHeaders hh = new HttpHeaders();
 		
 		hh.set("Authorization", token);
-		log.info(MDC.get("userToken"));
-		return new ResponseEntity<>(principal, hh, HttpStatus.ACCEPTED);
+		
+		log.info(MDC.get("Login successful"));
+		
+		return new ResponseEntity<>("Login successful", hh, HttpStatus.ACCEPTED);
 		
 	}//End login()
 	

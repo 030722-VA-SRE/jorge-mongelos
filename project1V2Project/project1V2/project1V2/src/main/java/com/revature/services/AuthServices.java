@@ -31,18 +31,38 @@ public class AuthServices {
 			
 			throw new AuthenticationException("Attepmted to login with username: " + userName);
 			
+		
+			
 		}//End if
 		
 		log.info(MDC.get("userToken"));
-		return principal.getUserId() + ":" + principal.getRole().toString();
+		return principal.getUserId() + " : " + principal.getUserName();
 		
 	}//End login()
 	
-	public String generateToken(UsersDTO principal) {
-		
-		return principal.getId() + ":" + principal.getUserName();
-		
-	}//End generateToken()
+//	public String verify(String token) {
+//		
+//		if(token == null) {
+//			
+//			throw new AuthenticationException("null token");
+//		}
+//		
+//		String[] splitToken = token.split(":");
+//		
+//		Users principal = ur.findById(Integer.valueOf(splitToken[0])).orElse(null);
+//		
+//		if(principal == null || !principal.getRole().toString().equals(splitToken[1]) || !principal.getRole().toString().equals("Admin")) {
+//			
+//			throw new AuthenticationException("Unable to verify token of value: " + splitToken[0] + ", " + splitToken[1]); 
+//		}//End of if
+//		
+//		log.info("toekn verified successfully");
+//			
+//		MDC.put("userId", token);
+//		
+//		return token;
+//		
+//	}//End of verify()
 	
 	
 
