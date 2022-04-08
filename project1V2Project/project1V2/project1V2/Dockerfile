@@ -6,7 +6,7 @@ COPY src/ src/
 COPY pom.xml pom.xml
 
 #Build our application
-RUN mvn package -Dprod -Dmaven.test.skip
+RUN mvn package -Pprod -Dmaven.test.skip
 #The jar file has been generated
 
 #as a separate stage, save the resulting artifact and discard maven from previo>
