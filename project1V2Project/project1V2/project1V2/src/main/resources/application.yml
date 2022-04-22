@@ -1,17 +1,17 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/postgres
-    username: postgres
-    password: pass
-#     url: ${DB_URL_SHOP} 
-#     username: ${DB_USER_SHOP}
-#     password: ${DB_PASS_SHOP}
+#    url: jdbc:postgresql://postgres:5432/postgres
+#    username: postgres
+#    password: pass
+     url: jdbc:postgresql://shopdb.cnjzhg51nfls.us-east-1.rds.amazonaws.com:5432/postgres
+     username: postgres
+     password: st0uti6idilt(650
   jpa:
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create
       
 management:
   endpoints:
