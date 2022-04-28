@@ -1,0 +1,12 @@
+[submodule "project3/project3/ClusterDeployment"]
+	path = project3/project3/ClusterDeployment
+	url = https://github.com/revature-bubble3-devops-team-1/ClusterDeployment.git
+[submodule "project3/project3/BackEnd"]
+	path = project3/project3/BackEnd
+	url = https://github.com/revature-bubble3-devops-team-1/BackEnd.git
+[submodule "project3/project3/FrontEnd"]
+	path = project3/project3/FrontEnd
+	url = https://github.com/revature-bubble3-devops-team-1/FrontEnd.git
+[submodule "project3/project3/Presentation"]
+	path = project3/project3/Presentation
+	url = https://github.com/revature-bubble3-devops-team-1/Presentation.git
