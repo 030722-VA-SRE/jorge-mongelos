@@ -26,7 +26,7 @@ interactions with some kind of item, the choice is up to you.
 * As an employee, I can remove an item from the shop.
 * As a customer, I can view the items that I own.
 
-###Clone Repository
+### Clone Repository
 
 * git clone https://github.com/030722-VA-SRE/jorge-mongelos.git
 * git commands work cross-platform
@@ -39,6 +39,22 @@ interactions with some kind of item, the choice is up to you.
 * Download and install Postman
 
 <img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/Postman.jpg">
+
+## Project's source code
+
+* main method
+
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/main_method.jpg">
+
+* Auth Controller folder
+
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/AuthController.java.jpg">
+
+* DTO folder
+* Exceptions folder
+* Models folder
+* Services folder
+
 
 
 
