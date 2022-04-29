@@ -44,7 +44,7 @@ interactions with some kind of item, the choice is up to you.
 
 * main method
 
-<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/main_method.jpg">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/mainMethod.jpg">
 
 * Auth Controller folder
 
