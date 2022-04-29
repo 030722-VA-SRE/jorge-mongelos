@@ -1,37 +1,42 @@
-PROJECT NAME
+# PROJECT NAME
 Project Item Shop
 
 The Item Shop app is a simple API that facilitates
 interactions with some kind of item, the choice is up to you.
 
-Technologies Used
-Tech 1 - Java Programing Language
-Tech 2 - Spring Boot Suite
-Tech 3 - AWS Postgresql instance
-Features
-List of features ready and TODOs for future development
+## Technologies Used
+* Tech 1 - Java Programing Language
+* Tech 2 - Spring Boot Suite
+* Tech 3 - AWS Postgresql instance
+* Features
 
-As a user, I can view all items.
-As a user, I can add a new item.
-As a user, I can update a item.
-As a user, I can view items by ID.
-As a user, I can search items by a criteria
+## List of features ready and TODOs for future development
 
-To-do list:
- As a user, I can login.
- As a user, I can register for a customer account.* As an employee, I can add an item to the shop.
- As a customer, I can view the available items.
- As a customer, I can purchase an item.
- As an employee, I can remove an item from the shop.
- As a customer, I can view the items that I own.
+* As a user, I can view all items.
+* As a user, I can add a new item.
+* As a user, I can update a item.
+* As a user, I can view items by ID.
+* As a user, I can search items by a criteria
+
+## To-do list:
+* As a user, I can login.
+* As a user, I can register for a customer account.* As an employee, I can add an item to the shop.
+* As a customer, I can view the available items.
+* As a customer, I can purchase an item.
+* As an employee, I can remove an item from the shop.
+* As a customer, I can view the items that I own.
 
 git clone https://github.com/030722-VA-SRE/jorge-mongelos.git
 
-After cloning the repository:
-*Open with Spring Tool Suite 4 (STS)
-*Run the software with the "Run" button provided in the STS
+### After cloning the repository:
+* Open with Spring Tool Suite 4 (STS)
+* Run the software with the "Run" button provided in the STS
+
 <img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/STS.jpg">
+
 * Download and install Postman
+
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/Postman.jpg">
 
 
 
