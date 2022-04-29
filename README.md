@@ -55,6 +55,7 @@ interactions with some kind of item, the choice is up to you.
 * DTO folder
 
 <img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/ItemsDTO.jpg">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UsersDTO.jpg">
 
 * Exceptions folder
 * Models folder
