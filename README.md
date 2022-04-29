@@ -30,6 +30,7 @@ git clone https://github.com/030722-VA-SRE/jorge-mongelos.git
 After cloning the repository:
 *Open with Spring Tool Suite 4 (STS)
 *Run the software with the "Run" button provided in the STS
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/STS.jpg">
 * Download and install Postman
 
 
