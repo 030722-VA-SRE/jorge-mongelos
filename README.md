@@ -49,10 +49,13 @@ interactions with some kind of item, the choice is up to you.
 * Auth Controller folder
 
 <img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/AuthController.java.jpg">
-<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/ItemsControler.jpg">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/ItemsController.jpg">
 <img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UsersController.jpg">
 
 * DTO folder
+
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/ItemsDTO.jpg">
+
 * Exceptions folder
 * Models folder
 * Services folder
