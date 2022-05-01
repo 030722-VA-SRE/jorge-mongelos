@@ -172,5 +172,5 @@ interactions with some kind of item, the choice is up to you.
    * Kyle Pfunder
 
 
-License
-This project uses the following license: <MIT Standard>.
+# License
+## MIT Standard.
