@@ -168,6 +168,7 @@ interactions with some kind of item, the choice is up to you.
    * Aaron Cunanan
    * Ayan Williams
    * Kaitlyn Moore
+   * Henry Gay
    * Fentry Martin
    * Alex Pazmino
    * Kyle Pfunder
