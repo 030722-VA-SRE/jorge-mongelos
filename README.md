@@ -80,19 +80,97 @@ interactions with some kind of item, the choice is up to you.
 <img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UsersRepository.png">
 <img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UsersRepository.png">
 
+## Instructions:
+1. clone git repository.
+2. Must attach a DBMS to source code.
+3. Start IDE of preference (Spring Tool Suite 4 Recommended).
+4. Open as an existing project.
+5. Run the program with Spring Boot initializer button.
+
+## Postman
+
+1. Open Postman.
+2. initial url: http://localhost:8081
+3. To access users: http://localhost:8081/users
+4. To create an user: http://localhost:8081/users
+   - click on Body tab
+   - click on "raw" sub-tab
+   - click format sub-tab and set it to "JSON"
+   - Use following Json notation
+        *  {
+            "username": "user",
+            "userPassword: "pass",
+            "role": "BASIC_USER"
+           }
+5. To delete user:
+    * Input url: http://localhost:8081/users/# ID
+    * Click on "Send"
+6. To login:
+    * input url: http://localhost:8081/auth
+    * Click "Body" sub-tab
+    * Click "x-www-form-urlencoded" sub-tab
+    * On "Key" option:
+        - input: username
+        - input: password
+    * On Value option:
+        - input credentials
+7. To get security token:
+    * Click on "Body" under "Response" tab.
+    * Copy contents of "Authorization"
+    * Go back to "Request" tab.
+    * Under "password" key write "Token"
+    * Under "password" value copy/paste copied token.
+8. To update user:
+    * input url: http://localhost:8081/ID#
+    * click on Body tab
+    * click on "raw" sub-tab
+    * click format sub-tab and set it to "JSON"
+    * Use following Json notation
+        -  {
+            "username": "user",
+            "userPassword: "pass"
+           }
+
+## To work with items in the shop
+1. initial url: http://localhost:8081
+2. To access users: http://localhost:8081/items
+3. To create an user: http://localhost:8081/items
+   - click on Body tab
+   - click on "raw" sub-tab
+   - click format sub-tab and set it to "JSON"
+   - Use following Json notation
+        *  {
+            "itemName": "Roma Tomatoes",
+            "itemCategory": "produce",
+            "itemPrice": "1.33"
+           }
+4. To delete item:
+    * Input url: http://localhost:8081/items/ID#
+    * Click on "Send"
+5. To update item:
+    * input url: http://localhost:8081/ID#
+    * click on Body tab
+    * click on "raw" sub-tab
+    * click format sub-tab and set it to "JSON"
+    * Use following Json notation
+        -  {
+            "itemName": "Roma Tomatoes",
+            "itemCategory": "produce",
+            "itemPrice": "1.33"
+           }
+6. To get item by ID:
+    * Input url: http://localhost:8081/items/ID#
+    * Click on "Send"
+    
 
 
+# Contributors
+   * Aaron Cunanan
+   * Ayan Williams
+   * Fentry Martin
+   * Alex Pazmino
+   * Kyle Pfunder
 
-All the code required to get started
-Images of what it should look like
-Usage
-Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
-
-Contributors
-Here list the people who have contributed to this project. (ignore this section, if its a solo project)
 
 License
-This project uses the following license: <license_name>.
-
-project3Repo: https://github.com/revature-bubble3-devops-team-1
-trelloBoard: https://trello.com/b/SomkxHxC/kevin-tran-huu-bubble3-team-1-1285
+This project uses the following license: <MIT Standard>.
