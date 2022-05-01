@@ -59,7 +59,7 @@ interactions with some kind of item, the choice is up to you.
 
 * Exceptions folder
 
-<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/AuthenticationException.c">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/AuthenticationException.png">
 <img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/ItemsNotFoundException.png">
 <img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UserNotFoundException.png">
 
