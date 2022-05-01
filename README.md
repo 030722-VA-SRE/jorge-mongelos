@@ -167,6 +167,7 @@ interactions with some kind of item, the choice is up to you.
 # Contributors
    * Aaron Cunanan
    * Ayan Williams
+   * Kaitlyn Moore
    * Fentry Martin
    * Alex Pazmino
    * Kyle Pfunder
