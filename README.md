@@ -58,8 +58,27 @@ interactions with some kind of item, the choice is up to you.
 <img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UsersDTO.jpg">
 
 * Exceptions folder
+
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/AuthenticationException.c">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/ItemsNotFoundException.png">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UserNotFoundException.png">
+
 * Models folder
+
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/Items.png">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/Users.png">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UsersRole.png">
+
+* Persistence folder
+
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UsersRepository.png">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/ItemsRepository.png">
+
 * Services folder
+
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/AuthServices.png">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UsersRepository.png">
+<img src="https://github.com/030722-VA-SRE/jorge-mongelos/blob/main/images/UsersRepository.png">
 
 
 
